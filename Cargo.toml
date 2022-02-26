@@ -1,9 +1,17 @@
 [package]
 name = "aht10"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["mmmpa <mmmpa.mmmpa@gmail.com>"]
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
+i2cdev = { version = "0.4.4", optional = true }
+log = "0.4.14"
+
+[dev-dependencies]
+tokio = { version = "1.17.0", features = ["full"] }
+pretty_env_logger = "0.4.0"
+
+[features]
+std = ["i2cdev"]
+embedded = []
